@@ -1,0 +1,2 @@
+# packt-enterprise
+book: BecomingAnEnterpriseDjangoDeveloper 
