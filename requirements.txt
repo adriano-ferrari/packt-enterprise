@@ -1,0 +1,10 @@
+django~=4.0
+django-extensions
+dj-database-url
+gunicorn
+python-dotenv
+pydotplus
+psycopg2
+psycopg2-binary==2.8.6
+whitenoise
+secret-key-generator
