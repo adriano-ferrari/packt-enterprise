@@ -37,7 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'djmoney',
     'enterprise.chapter_2',
+    'enterprise.chapter_3',
 ]
 
 MIDDLEWARE = [
@@ -110,6 +112,9 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+# Chapter 3 - Custom User Model - This Value is Needed for Chapter 4 - 10
+AUTH_USER_MODEL = 'chapter_3.Seller'
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
@@ -121,6 +126,14 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
+
+# Chapter 3 - Third Party Field Type
+# Django-Money Field Package
+CURRENCIES = ('USD', 'EUR')
+CURRENCY_CHOICES = [
+    ('USD', 'USD $'),
+    ('EUR', 'EUR €'),
+]
 
 
 # Static files (CSS, JavaScript, Images)
