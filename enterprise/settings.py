@@ -47,7 +47,7 @@ THIRD_PARTY_APPS = [
 
     'django_extensions', # Chapter 2 - Project Configuration
     #'address', # Chapter 3 - Django Models
-    #'djmoney', # Chapter 3 - Django Models
+    'djmoney', # Chapter 3 - Django Models
     #'phone_field', # Chapter 3 - Django Models
     #'rest_framework', # Chapter 8 - Django REST Framework
     #'rest_framework.authtoken', # Chapter 8 - Django REST Framework
