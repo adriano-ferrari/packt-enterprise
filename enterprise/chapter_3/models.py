@@ -43,18 +43,18 @@ class VehicleModel(models.Model):
         blank = True,
         null = True,
     )
-    #make = models.PositiveIntegerField(
-    #    choices = MAKE_CHOICES,
-    #    verbose_name = 'Make/Manufacturer',
-    #    blank = True,
-    #    null = True,
-    #)
+    make = models.PositiveIntegerField(
+        choices = MAKE_CHOICES,
+        verbose_name = 'Make/Manufacturer',
+        blank = True,
+        null = True,
+    )
 
-    #def __str__(self):
-    #    '''
-    #    Method to return __str__ format of the VehicleModel Model
-    #    '''
-    #    return str(self.name)
+    def __str__(self):
+        '''
+        Method to return __str__ format of the VehicleModel Model
+        '''
+        return str(self.name)
 
     #def natural_key(self):
     #    '''
@@ -96,11 +96,11 @@ class Engine(models.Model):
         null = True,
     )
 
-    #def __str__(self):
-    #    '''
-    #    Method to return __str__ format of the Engine Model
-    #    '''
-    #    return str(self.name)
+    def __str__(self):
+        '''
+        Method to return __str__ format of the Engine Model
+        '''
+        return str(self.name)
 
     #def natural_key(self):
     #    '''
@@ -213,12 +213,12 @@ class Vehicle(models.Model):
             MaxMoneyValidator({'EUR': 500000, 'USD': 400000}),
         ]
     )
-    #make = models.PositiveIntegerField(
-    #    choices = MAKE_CHOICES,
-    #    verbose_name = 'Vehicle Make/Brand',
-    #    blank = True,
-    #    null = True,
-    #)
+    make = models.PositiveIntegerField(
+        choices = MAKE_CHOICES,
+        verbose_name = 'Vehicle Make/Brand',
+        blank = True,
+        null = True,
+    )
     vehicle_model = models.ForeignKey(
         VehicleModel,
         on_delete = models.CASCADE,
@@ -240,26 +240,26 @@ class Vehicle(models.Model):
     #buick_objects = BuickVehicleManager() # The Buick Specific Manager
     #chevy_objects = ChevyVehicleManager() # The Chevy Specific Manager
 
-    #def __str__(self):
-    #    '''
-    #    Method to return __str__ format of the Vehicle Model
-    #    '''
-    #    MAKE_CHOICES_DICT = dict(MAKE_CHOICES)
+    def __str__(self):
+        '''
+        Method to return __str__ format of the Vehicle Model
+        '''
+        MAKE_CHOICES_DICT = dict(MAKE_CHOICES)
+        
+        return MAKE_CHOICES_DICT[self.make] + ' ' + self.vehicle_model.name
 
-    #    return MAKE_CHOICES_DICT[self.make] + ' ' + self.vehicle_model.name
+    def full_vehicle_name(self):
+        '''
+        Method to return full vehicle name of seller
+        '''
+        return self.__str__() + ' - ' + self.engine.name
 
-    #def full_vehicle_name(self):
-    #    '''
-    #    Method to return full vehicle name of seller
-    #    '''
-    #    return self.__str__() + ' - ' + self.engine.name
-
-    #@property
-    #def fullname(self):
-    #    '''
-    #    Method to return full name of seller object as a property value
-    #    '''
-    #    return self.__str__() + ' - ' + self.engine.name
+    @property
+    def fullname(self):
+        '''
+        Method to return full name of seller object as a property value
+        '''
+        return self.__str__() + ' - ' + self.engine.name
 
     #def get_url(self):
     #    '''
