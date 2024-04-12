@@ -293,8 +293,8 @@ class Vehicle(models.Model):
     #    verbose_name_plural = 'Vehicles'
 
 
-class Seller(models.Model):
-#class Seller(AbstractUser):
+#class Seller(models.Model):
+class Seller(AbstractUser):
     '''
     Model Object for Database Table chapter_3_seller
     '''

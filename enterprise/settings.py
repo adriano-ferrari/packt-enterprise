@@ -156,7 +156,7 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 # Chapter 3 - Custom User Model - This Value is Needed for Chapter 4 - 10
-#AUTH_USER_MODEL = 'chapter_3.Seller'
+AUTH_USER_MODEL = 'chapter_3.Seller'
 
 
 # Internationalization
