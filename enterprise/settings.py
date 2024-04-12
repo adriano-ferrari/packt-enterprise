@@ -28,19 +28,62 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 
-# Application definition
+# Application References
+# https://docs.djangoproject.com/en/3.2/ref/settings/#std:setting-INSTALLED_APPS
+DJANGO_APPS = [
+    # Add your apps here to enable them
+    'django.contrib.admin', # Chapter 6 - Exploring the Django Admin Site
+    'django.contrib.auth', # Chapter 2 - Project Configuration
+    'django.contrib.contenttypes', # Chapter 2 - Project Configuration
+    'django.contrib.sessions', # Chapter 7 - Django Messages Framework
+    'django.contrib.messages', # Chapter 7 - Django Messages Framework
+    'django.contrib.staticfiles', # Chapter 2 - Project Configuration
+]
 
-INSTALLED_APPS = [
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
-    'djmoney',
+THIRD_PARTY_APPS = [
+    # Introduced in Chapter 9, can be turned on in all previous chapters without disrupting
+    # those exercises. Turn Off/Comment Out For the First Half of Chapter 9
+    #'debug_toolbar',
+
+    'django_extensions', # Chapter 2 - Project Configuration
+    #'address', # Chapter 3 - Django Models
+    #'djmoney', # Chapter 3 - Django Models
+    #'phone_field', # Chapter 3 - Django Models
+    #'rest_framework', # Chapter 8 - Django REST Framework
+    #'rest_framework.authtoken', # Chapter 8 - Django REST Framework
+]
+
+#if DEBUG:
+#    # Introduced in Chapter 9, can be turned on in all previous chapters without disrupting
+#    # those exercises. Turn Off/Comment Out For the First Half of Chapter 9
+#    THIRD_PARTY_APPS[0] = 'debug_toolbar'
+
+'''
+Only use chapter 1 to go back and practice generating diagrams in that chapter,
+Chapter 3 - 10, will need to comment out chapter_1 in order to use those chapters without
+errors. You can always practice generating diagrams on other apps/models as well. The reason
+errors will result, is because in Chapter 3 we practiced changing the AUTH_USER_MODEL setting
+to now point to the Seller model instead of the default User model. A model in Chapter 1's
+example points to the original User model. Proceed with caution!
+'''
+LOCAL_APPS = [
+    #'enterprise.chapter_1',
+
     'enterprise.chapter_2',
     'enterprise.chapter_3',
+    #'enterprise.chapter_4',
+    #'enterprise.chapter_5',
+    #'enterprise.chapter_6',
+    #'enterprise.chapter_7',
+    #'enterprise.chapter_8',
+    #'enterprise.chapter_9',
+    #'enterprise.chapter_10',
 ]
+
+# Chapter 2 - Project Configuration
+#### MERGE ALL APPS ####
+INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -113,7 +156,7 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 # Chapter 3 - Custom User Model - This Value is Needed for Chapter 4 - 10
-AUTH_USER_MODEL = 'chapter_3.Seller'
+#AUTH_USER_MODEL = 'chapter_3.Seller'
 
 
 # Internationalization
