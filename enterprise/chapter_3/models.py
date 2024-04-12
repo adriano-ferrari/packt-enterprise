@@ -62,19 +62,19 @@ class VehicleModel(models.Model):
     #    '''
     #    return self.__str__()
 
-    #class Meta:
-    #    '''
-    #    Meta Sub-Class for chapter_3_vehicle_model Table
-    #    '''
-    #    ordering = ['name',]
-    #    verbose_name = 'Vehicle Model'
-    #    verbose_name_plural = 'Vehicle Models'
-    #    indexes = [
-    #        models.Index(fields=['name']),
-    #        #models.Index(fields=['name', 'make']),
-    #        models.Index(fields=['-name'], name='desc_name_idx'),
-    #        models.Index(Lower('name').desc(), name='lower_name_idx')
-    #    ]
+    class Meta:
+        '''
+        Meta Sub-Class for chapter_3_vehicle_model Table
+        '''
+        ordering = ['name',]
+        verbose_name = 'Vehicle Model'
+        verbose_name_plural = 'Vehicle Models'
+        indexes = [
+            models.Index(fields=['name']),
+            #models.Index(fields=['name', 'make']),
+            models.Index(fields=['-name'], name='desc_name_idx'),
+            models.Index(Lower('name').desc(), name='lower_name_idx')
+        ]
 
 
 class Engine(models.Model):
@@ -117,34 +117,34 @@ class Engine(models.Model):
     #    verbose_name_plural = 'Engines'
 
 
-#class engine2(models.Model):
-#    '''
-#    Model Object for Database Table chapter_3_practice_engine
-#    '''
-#    name = models.CharField(
-#        verbose_name = 'Engine',
-#        max_length = 75,
-#        blank = True,
-#        null = True,
-#    )
-#    #vehicle_model = models.ForeignKey(
-#    #    VehicleModel,
-#    #    on_delete = models.CASCADE,
-#    #    verbose_name = 'Model',
-#    #    related_name = 'model_engine2',
-#    #    blank = True,
-#    #    null = True,
-#    #)
-
-#    class Meta:
-#        '''
-#        Meta Sub-Class for chapter_3_practice_engine Table
-#        '''
-#        #abstract = True
-#        db_table = 'chapter_3_practice_engine'
-#        #ordering = ['name',]
-#        #verbose_name = 'Practice Engine'
-#        #verbose_name_plural = 'Practice Engines'
+class engine2(models.Model):
+    '''
+    Model Object for Database Table chapter_3_practice_engine
+    '''
+    name = models.CharField(
+        verbose_name = 'Engine',
+        max_length = 75,
+        blank = True,
+        null = True,
+    )
+    #vehicle_model = models.ForeignKey(
+    #    VehicleModel,
+    #    on_delete = models.CASCADE,
+    #    verbose_name = 'Model',
+    #    related_name = 'model_engine2',
+    #    blank = True,
+    #    null = True,
+    #)
+    
+    class Meta:
+        '''
+        Meta Sub-Class for chapter_3_practice_engine Table
+        '''
+        #abstract = True
+        db_table = 'chapter_3_practice_engine'
+        #ordering = ['name',]
+        #verbose_name = 'Practice Engine'
+        #verbose_name_plural = 'Practice Engines'
 
 
 #class engine3(engine2):
