@@ -127,36 +127,36 @@ class engine2(models.Model):
         blank = True,
         null = True,
     )
-    #vehicle_model = models.ForeignKey(
-    #    VehicleModel,
-    #    on_delete = models.CASCADE,
-    #    verbose_name = 'Model',
-    #    related_name = 'model_engine2',
-    #    blank = True,
-    #    null = True,
-    #)
+    vehicle_model = models.ForeignKey(
+        VehicleModel,
+        on_delete = models.CASCADE,
+        verbose_name = 'Model',
+        related_name = 'model_engine2',
+        blank = True,
+        null = True,
+    )
     
     class Meta:
         '''
         Meta Sub-Class for chapter_3_practice_engine Table
         '''
-        #abstract = True
+        abstract = True
         db_table = 'chapter_3_practice_engine'
-        #ordering = ['name',]
-        #verbose_name = 'Practice Engine'
-        #verbose_name_plural = 'Practice Engines'
+        ordering = ['name',]
+        verbose_name = 'Practice Engine'
+        verbose_name_plural = 'Practice Engines'
 
 
-#class engine3(engine2):
-#    '''
-#    Model Object for Database Table chapter_3_practice_engine
-#    '''
-#    other_name = models.CharField(
-#        verbose_name = 'Other Engine Name',
-#        max_length = 75,
-#        blank = True,
-#        null = True,
-#    )
+class engine3(engine2):
+    '''
+    Model Object for Database Table chapter_3_practice_engine
+    '''
+    other_name = models.CharField(
+        verbose_name = 'Other Engine Name',
+        max_length = 75,
+        blank = True,
+        null = True,
+    )
 
 
 class BuickVehicleManager(models.Manager):
