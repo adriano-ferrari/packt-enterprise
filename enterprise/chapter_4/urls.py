@@ -117,11 +117,11 @@ urlpatterns = [
     #    r'^my_year_path/(?P<year:year>[0-9]+)/?$',
     #    practice_view
     #),
-    #path(
-    #    'vehicle/<int:id>/',
-    #    vehicle_view,
-    #    name = 'vehicle-detail'
-    #),
+    path(
+        'vehicle/<int:id>/',
+        vehicle_view,
+        name = 'vehicle-detail'
+    ),
     #path(
     #    'vehicle/<str:vin>/',
     #    vehicle_view,
