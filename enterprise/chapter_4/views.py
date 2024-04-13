@@ -48,12 +48,12 @@ def practice_year_view(request, year):
 
     #logger.info(f'The Requested Year Is: {year}')
 
-    return TemplateResponse(request, 'chapter_4/my_year.html', {'year': year})
+    #return TemplateResponse(request, 'chapter_4/my_year.html', {'year': year})
 
-    #if year >= 1900:
-    #    return TemplateResponse(request, 'chapter_4/my_year.html', {'year': year})
-    #else:
-    #    raise Http404(f'Year Not Found: {year}')
+    if year >= 1900:
+        return TemplateResponse(request, 'chapter_4/my_year.html', {'year': year})
+    
+    raise Http404(f'Year Not Found: {year}')
 
 
 def vehicle_view(request, id):
