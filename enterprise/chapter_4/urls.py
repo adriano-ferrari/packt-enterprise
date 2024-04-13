@@ -23,7 +23,7 @@ from django.urls import (
 )
 from django.views.generic import (
     TemplateView,
-    #RedirectView,
+    RedirectView,
 )
 
 from .converters import YearConverter
@@ -55,14 +55,14 @@ urlpatterns = [
     #    'chapter-4/',
     #    HttpResponse('This is the Chapter 4 Page')
     #),
-    #path(
-    #    'my_path/my_unwanted_url/',
-    #    RedirectView.as_view(url='http://localhost:8000/my_wanted_url/', permanent=True)
-    #),
-    #path(
-    #    'my_wanted_url/',
-    #    TemplateView.as_view(template_name='chapter_4/index.html')
-    #),
+    path(
+        'my_path/my_unwanted_url/',
+        RedirectView.as_view(url='http://localhost:8000/my_wanted_url/', permanent=True)
+    ),
+    path(
+        'my_wanted_url/',
+        TemplateView.as_view(template_name='chapter_4/index.html')
+    ),
     #path(
     #    'my_path/<path:my_pattern>/',
     #    TemplateView.as_view(template_name='chapter_4/index.html')
