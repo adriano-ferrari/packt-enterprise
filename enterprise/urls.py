@@ -54,8 +54,8 @@ urlpatterns = urlpatterns + [
     #),
 
     path('', include('enterprise.chapter_4.urls')),
-] #+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + \
-    #static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + \
+    static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 # END - CHAPTER 4 #
 
 # CHAPTER 5 - Uncomment for Chapter 5 Only, Comment Out For All Other Chapters #

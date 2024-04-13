@@ -63,10 +63,10 @@ urlpatterns = [
         'my_wanted_url/',
         TemplateView.as_view(template_name='chapter_4/index.html')
     ),
-    #path(
-    #    'my_path/<path:my_pattern>/',
-    #    TemplateView.as_view(template_name='chapter_4/index.html')
-    #),
+    path(
+        'my_path/<path:my_pattern>/',
+        TemplateView.as_view(template_name='chapter_4/index.html')
+    ),
     #path(
     #    'my_path/<path:my_pattern>/',
     #    TemplateView.as_view(template_name='chapter_4/index.html'),
@@ -80,10 +80,10 @@ urlpatterns = [
     #    'my_year_path/2022/',
     #    TemplateView.as_view(template_name='chapter_4/index.html')
     #),
-    #path(
-    #    'my_year_path/<int:my_year>/',
-    #    TemplateView.as_view(template_name='chapter_4/index.html')
-    #),
+    path(
+        'my_year_path/<int:my_year>/',
+        TemplateView.as_view(template_name='chapter_4/index.html')
+    ),
     #path(
     #    'my_year_path/<year>/',
     #    TemplateView.as_view(template_name='chapter_4/index.html')
@@ -96,10 +96,10 @@ urlpatterns = [
     #    'my_year_path/(?P<year>[0-9]{4})/$',
     #    practice_year_view
     #),
-    #path(
-    #    'my_year_path/<year:year>/',
-    #    TemplateView.as_view(template_name='chapter_4/index.html')
-    #),
+    path(
+        'my_year_path/<year:year>/',
+        TemplateView.as_view(template_name='chapter_4/index.html')
+    ),
     #path(
     #    'my_year_path/<year:year>/',
     #    practice_view
