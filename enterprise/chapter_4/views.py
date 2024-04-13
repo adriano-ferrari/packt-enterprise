@@ -1,40 +1,29 @@
 ''' Chapter 4 Views Module '''
 import logging
-from django.http import (
-    Http404,
-    #HttpResponse,
-    HttpResponseRedirect,
-)
+from django.http import Http404, HttpResponse, HttpResponseRedirect
 #from django.shortcuts import render, redirect
 from django.template.response import TemplateResponse
-#from django.urls import reverse
+from django.urls import reverse
 from django.views.generic import View
-
 
 from ..chapter_3.models import Vehicle
 
 
 def practice_view(request, year):
-    '''
-    Practice Year View Method - Maps to http://localhost:8000/my_year_path/####/
-    '''
     return TemplateResponse(request, 'chapter_4/my_practice_page.html', {'year': year})
 
 
 def practice_year_view(request, year):
-    '''
-    Practice Year Alternate View Method - Maps to http://localhost:8000/my_year_path/####/
-    '''
     # What Year Did The User Visit?
-    print(type(year))
-    print(year)
+    #print(type(year))
+    #print(year)
 
     # Relative URL Lookup
-    #print(reverse('year_url', args=(2023,)))
-    #print(reverse('year_url', args=(2024,)))
-    #print(reverse('year_url', args=(2025,)))
-    #print(reverse('year_url', args=(2026,)))
-    #print(reverse('year_url', args=(2027,)))
+    print(reverse('year_url', args=(2023,)))
+    print(reverse('year_url', args=(2024,)))
+    print(reverse('year_url', args=(2025,)))
+    print(reverse('year_url', args=(2026,)))
+    print(reverse('year_url', args=(2027,)))
 
     # Absolute URL Lookup (http://www.yourdomain.com and https://www.yourdomain.com)
     #print(request.build_absolute_uri(reverse('year_url', args=(2023,))))
@@ -43,17 +32,15 @@ def practice_year_view(request, year):
     #print(request.build_absolute_uri(reverse('year_url', args=(2026,))))
     #print(request.build_absolute_uri(reverse('year_url', args=(2027,))))
 
-    #logger = logging.getLogger(__name__)
-    #logger.setLevel(logging.INFO)
+    logger = logging.getLogger(__name__)
+    logger.setLevel(logging.INFO)
 
-    #logger.info(f'The Requested Year Is: {year}')
-
-    #return TemplateResponse(request, 'chapter_4/my_year.html', {'year': year})
+    logger.info(f'The Requested Year Is: {year}')
 
     if year >= 1900:
         return TemplateResponse(request, 'chapter_4/my_year.html', {'year': year})
-    
-    raise Http404(f'Year Not Found: {year}')
+    else:
+        raise Http404(f'Year Not Found: {year}')
 
 
 def vehicle_view(request, id):
