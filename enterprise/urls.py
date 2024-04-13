@@ -41,7 +41,7 @@ urlpatterns = [
 urlpatterns = []
 # CHAPTER 4 - Uncomment for Chapter 4 Only, Comment Out For All Other Chapters #
 urlpatterns = urlpatterns + [
-    path('', TemplateView.as_view(template_name='chapter_4/index.html')),
+    #path('', TemplateView.as_view(template_name='chapter_4/index.html')),
 
     #path(
     #    '',
@@ -53,9 +53,9 @@ urlpatterns = urlpatterns + [
     #    TemplateView.as_view(template_name='chapter_4/chapter_4.html')
     #),
 
-    #path('', include('becoming_a_django_entdev.chapter_4.urls')),
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + \
-    static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    path('', include('enterprise.chapter_4.urls')),
+] #+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + \
+    #static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 # END - CHAPTER 4 #
 
 # CHAPTER 5 - Uncomment for Chapter 5 Only, Comment Out For All Other Chapters #
