@@ -26,8 +26,8 @@ def practice_year_view(request, year):
     Practice Year Alternate View Method - Maps to http://localhost:8000/my_year_path/####/
     '''
     # What Year Did The User Visit?
-    #print(type(year))
-    #print(year)
+    print(type(year))
+    print(year)
 
     # Relative URL Lookup
     #print(reverse('year_url', args=(2023,)))

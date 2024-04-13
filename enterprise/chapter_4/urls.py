@@ -18,7 +18,7 @@ Including another URLconf
 from django.urls import (
     #include,
     path,
-    #re_path,
+    re_path,
     register_converter,
 )
 from django.views.generic import (
@@ -92,18 +92,18 @@ urlpatterns = [
     #    'my_year_path/(?P<year>[0-9]{4})/$',
     #    TemplateView.as_view(template_name='chapter_4/index.html')
     #),
-    #re_path(
-    #    'my_year_path/(?P<year>[0-9]{4})/$',
-    #    practice_year_view
-    #),
+    re_path(
+        'my_year_path/(?P<year>[0-9]{4})/$',
+        practice_year_view
+    ),
     #path(
     #    'my_year_path/<year:year>/',
     #    TemplateView.as_view(template_name='chapter_4/index.html')
     #),
-    path(
-        'my_year_path/<year:year>/',
-        practice_view
-    ),
+    #path(
+    #    'my_year_path/<year:year>/',
+    #    practice_view
+    #),
     #path(
     #    'my_year_path/<year:year>/',
     #    practice_year_view
