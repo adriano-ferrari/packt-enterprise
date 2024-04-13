@@ -236,9 +236,9 @@ class Vehicle(models.Model):
         null = True,
     )
 
-    #objects = models.Manager() # The Default Model Manager
-    #buick_objects = BuickVehicleManager() # The Buick Specific Manager
-    #chevy_objects = ChevyVehicleManager() # The Chevy Specific Manager
+    objects = models.Manager() # The Default Model Manager
+    buick_objects = BuickVehicleManager() # The Buick Specific Manager
+    chevy_objects = ChevyVehicleManager() # The Chevy Specific Manager
 
     def __str__(self):
         '''
