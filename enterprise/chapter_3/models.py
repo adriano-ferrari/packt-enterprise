@@ -261,36 +261,36 @@ class Vehicle(models.Model):
         '''
         return self.__str__() + ' - ' + self.engine.name
 
-    #def get_url(self):
-    #    '''
-    #    Method to return relative URL of a seller object edit page
-    #    '''
-    #    from django.urls import reverse
-    #    return reverse('vehicle-detail', kwargs={'id' : self.pk})
-    #    #return reverse('vehicle-detail', kwargs={'vin' : self.vin})
+    def get_url(self):
+        '''
+        Method to return relative URL of a seller object edit page
+        '''
+        from django.urls import reverse
+        return reverse('vehicle-detail', kwargs={'id' : self.pk})
+        #return reverse('vehicle-detail', kwargs={'vin' : self.vin})
 
-    #def get_absolute_url(self, request):
-    #    '''
-    #    Method to return absolute URL of a seller object edit page
-    #    '''
-    #    from django.urls import reverse
-    #    base_url = request.build_absolute_uri('/')[:-1].strip('/')
-    #    return base_url + reverse('vehicle-detail', kwargs={'id' : self.pk})
-    #    #return base_url + reverse('vehicle-detail', kwargs={'vin' : self.vin})
+    def get_absolute_url(self, request):
+        '''
+        Method to return absolute URL of a seller object edit page
+        '''
+        from django.urls import reverse
+        base_url = request.build_absolute_uri('/')[:-1].strip('/')
+        return base_url + reverse('vehicle-detail', kwargs={'id' : self.pk})
+        #return base_url + reverse('vehicle-detail', kwargs={'vin' : self.vin})
 
-    #def natural_key(self):
-    #    '''
-    #    Method to return Natural Key format of the Seller Model
-    #    '''
-    #    return self.full_vehicle_name()
+    def natural_key(self):
+        '''
+        Method to return Natural Key format of the Seller Model
+        '''
+        return self.full_vehicle_name()
 
-    #class Meta:
-    #    '''
-    #    Meta Sub-Class for chapter_3_vehicle Table
-    #    '''
-    #    ordering = ['sold', 'vin',]
-    #    verbose_name = 'Vehicle'
-    #    verbose_name_plural = 'Vehicles'
+    class Meta:
+        '''
+        Meta Sub-Class for chapter_3_vehicle Table
+        '''
+        ordering = ['sold', 'vin',]
+        verbose_name = 'Vehicle'
+        verbose_name_plural = 'Vehicles'
 
 
 #class Seller(models.Model):

@@ -15,8 +15,8 @@ def practice_view(request, year):
 
 def practice_year_view(request, year):
     # What Year Did The User Visit?
-    #print(type(year))
-    #print(year)
+    print(type(year))
+    print(year)
 
     # Relative URL Lookup
     print(reverse('year_url', args=(2023,)))
@@ -26,21 +26,23 @@ def practice_year_view(request, year):
     print(reverse('year_url', args=(2027,)))
 
     # Absolute URL Lookup (http://www.yourdomain.com and https://www.yourdomain.com)
-    #print(request.build_absolute_uri(reverse('year_url', args=(2023,))))
-    #print(request.build_absolute_uri(reverse('year_url', args=(2024,))))
-    #print(request.build_absolute_uri(reverse('year_url', args=(2025,))))
-    #print(request.build_absolute_uri(reverse('year_url', args=(2026,))))
-    #print(request.build_absolute_uri(reverse('year_url', args=(2027,))))
+    print(request.build_absolute_uri(reverse('year_url', args=(2023,))))
+    print(request.build_absolute_uri(reverse('year_url', args=(2024,))))
+    print(request.build_absolute_uri(reverse('year_url', args=(2025,))))
+    print(request.build_absolute_uri(reverse('year_url', args=(2026,))))
+    print(request.build_absolute_uri(reverse('year_url', args=(2027,))))
 
-    logger = logging.getLogger(__name__)
-    logger.setLevel(logging.INFO)
+    #logger = logging.getLogger(__name__)
+    #logger.setLevel(logging.INFO)
 
-    logger.info(f'The Requested Year Is: {year}')
+    #logger.info(f'The Requested Year Is: {year}')
+    
+    return TemplateResponse(request, 'chapter_4/my_year.html', {'year': year})
 
-    if year >= 1900:
-        return TemplateResponse(request, 'chapter_4/my_year.html', {'year': year})
-    else:
-        raise Http404(f'Year Not Found: {year}')
+    #if year >= 1900:
+    #    return TemplateResponse(request, 'chapter_4/my_year.html', {'year': year})
+    #else:
+    #    raise Http404(f'Year Not Found: {year}')
 
 
 def vehicle_view(request, id):
@@ -53,9 +55,9 @@ def vehicle_view(request, id):
         vehicle = Vehicle.objects.get(id=id)
     except Vehicle.DoesNotExist:
         raise Http404(f'Vehicle ID Not Found: {id}')
-    #else:
-    #    print(vehicle.get_url())
-    #    print(vehicle.get_absolute_url(request))
+    else:
+        print(vehicle.get_url())
+        print(vehicle.get_absolute_url(request))
 
     # Search By VIN
     #try:

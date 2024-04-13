@@ -107,7 +107,12 @@ TEMPLATES = [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
+
+                # Chapter 7 - Django Messages Framework
                 'django.contrib.messages.context_processors.messages',
+
+                # Chapter 4 - URLs, Views, and Templates
+                'enterprise.context_processors.global_context',
             ],
         },
     },
