@@ -26,3 +26,4 @@ def vehicle_make(value):
                 pass
 
     return ''
+

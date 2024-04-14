@@ -10,10 +10,18 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
-from pathlib import Path
+import os
+import posixpath
+#import django_heroku
+import dj_database_url
+import dotenv
+
+#from pathlib import Path
+from django.contrib.messages import constants as messages
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+#BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 # Quick-start development settings - unsuitable for production
@@ -22,10 +30,33 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-h#+evkxj5clqu3+xtj4%ynj25m&h&)l035!evpc)z0=zs--vg8'
 
+# Chapter 2 - Project Configuration
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+#DEBUG = False
+#DEBUG = os.getenv('DEBUG')
 
-ALLOWED_HOSTS = []
+
+# Chapter 2 - Project Configuration
+INTERNAL_IPS = [
+    '127.0.0.1',
+]
+
+# Chapter 2 - Project Configuration
+ALLOWED_HOSTS = [
+    # Keep these two as is, unless you are using different local/internal IP's
+    '127.0.0.1',
+    'localhost',
+    # Add your-domain.com
+    #'mikedinder.com',
+    #'www.mikedinder.com',
+    #'dev.mikedinder.com',
+    #'staging.mikedinder.com',
+    # Add your-heroku-app.herokuapp.com
+    #'becoming-an-entdev.herokuapp.com',
+    #'mighty-sea-09431.herokuapp.com',
+    #'pure-atoll-19670.herokuapp.com',
+]
 
 
 # Application References
@@ -187,7 +218,11 @@ CURRENCY_CHOICES = [
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
-STATIC_URL = 'static/'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATIC_URL = '/staticfiles/'
+STATIC_ROOT = posixpath.join(*(BASE_DIR.split(os.path.sep) + ['staticfiles']))
+MEDIA_URL = '/media/'
+MEDIA_ROOT = posixpath.join(*(BASE_DIR.split(os.path.sep) + ['media']))
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
