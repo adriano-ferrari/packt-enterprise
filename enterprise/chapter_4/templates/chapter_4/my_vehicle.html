@@ -1,5 +1,5 @@
 {% comment %}{#{% load static chapter_4 %}#}{% endcomment %}
-{% load static %}
+{% load static chapter_4 %}
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
     <head>
@@ -15,9 +15,7 @@
             <p>{{ vehicle.price }}</p>
             <p>{{ vehicle.make }}</p>
 
-            {% comment %}
-                {#<p>{{ vehicle.make|vehicle_make }}</p>#}
-            {% endcomment %}
+            <p>{{ vehicle.make|vehicle_make }}</p
 
             <p>{{ vehicle.vehicle_model }}</p>
             <p>{{ vehicle.engine }}</p>

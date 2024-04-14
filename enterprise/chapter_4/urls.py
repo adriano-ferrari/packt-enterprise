@@ -45,11 +45,11 @@ urlpatterns = [
     #path('my_year_path/<year:year>/', practice_year_view),
     path('my_year_path/<year:year>/', practice_year_view, name = 'year_url'),
     #re_path(r'^my_year_path/(?P<year:year>[0-9]+)/?$', practice_view),
-    #path('vehicle/<int:id>/', vehicle_view, name = 'vehicle-detail'),
+    path('vehicle/<int:id>/', vehicle_view, name = 'vehicle-detail'),
     #path('vehicle/<str:vin>/', vehicle_view, name = 'vehicle-detail'),
     #path('vehicle/<int:id>/', VehicleView.as_view(), name='vehicle-detail'),
     #path('vehicle/<int:id>/', VehicleView.as_view(template_name='chapter_4/my_vehicle_class_2.html'), name = 'vehicle-detail'),
-    path('vehicle/<int:id>/', VehicleView2.as_view(), name = 'vehicle-detail'),
+    #path('vehicle/<int:id>/', VehicleView2.as_view(), name = 'vehicle-detail'),
     path('test_page_1/', TestPageView.as_view(), name = 'test-page'),
     #path('vehicle/',VehicleView.as_view(),name = 'vehicle-detail'),
 ]
