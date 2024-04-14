@@ -50,6 +50,6 @@ urlpatterns = [
     #path('vehicle/<int:id>/', VehicleView.as_view(), name='vehicle-detail'),
     #path('vehicle/<int:id>/', VehicleView.as_view(template_name='chapter_4/my_vehicle_class_2.html'), name = 'vehicle-detail'),
     path('vehicle/<int:id>/', VehicleView2.as_view(), name = 'vehicle-detail'),
-    #path('test_page_1/', TestPageView.as_view(), name = 'test-page'),
+    path('test_page_1/', TestPageView.as_view(), name = 'test-page'),
     #path('vehicle/',VehicleView.as_view(),name = 'vehicle-detail'),
 ]
