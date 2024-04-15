@@ -59,9 +59,9 @@ urlpatterns = urlpatterns + [
 # END - CHAPTER 4 #
 
 # CHAPTER 5 - Uncomment for Chapter 5 Only, Comment Out For All Other Chapters #
-#urlpatterns = urlpatterns + [
-#    path('', include('becoming_a_django_entdev.chapter_5.urls')),
-#]
+urlpatterns = urlpatterns + [
+    path('', include('enterprise.chapter_5.urls')),
+]
 # END - CHAPTER 5 #
 
 # CHAPTER 6 - Uncomment for Chapter 6 Only, Comment Out For All Other Chapters #

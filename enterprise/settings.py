@@ -104,7 +104,7 @@ LOCAL_APPS = [
     'enterprise.chapter_3',
     'enterprise.chapter_4',
     'enterprise.chapter_5',
-    #'enterprise.chapter_6',
+    'enterprise.chapter_6',
     #'enterprise.chapter_7',
     #'enterprise.chapter_8',
     #'enterprise.chapter_9',
