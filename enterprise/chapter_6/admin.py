@@ -4,9 +4,9 @@ from django.contrib.admin import ModelAdmin, StackedInline, TabularInline
 from django.contrib.auth.admin import UserAdmin
 
 from .forms import (AddEngineForm, EngineForm, EngineSuperUserForm,
-    #AddSellerForm,
-    #SellerForm,
-    #SellerSuperUserForm
+    AddSellerForm,
+    SellerForm,
+    SellerSuperUserForm
 )
 from ..chapter_3.models import Engine, Seller, Vehicle, VehicleModel
 
@@ -211,18 +211,18 @@ class SellerAdmin(UserAdmin):
     #    models.TextField: {'widget': RichTextEditorWidget},
     #}
 
-    #def get_form(self, request, obj=None, **kwargs):
-    #    if obj:
-    #        print(request.user)
+    def get_form(self, request, obj=None, **kwargs):
+        if obj:
+            print(request.user)
 
-    #        if request.user.is_superuser:
-    #            return SellerSuperUserForm
-    #        else:
-    #            return SellerForm
-    #    else:
-    #        return AddSellerForm
+            if request.user.is_superuser:
+                return SellerSuperUserForm
+            else:
+                return SellerForm
+        else:
+            return AddSellerForm
 
-    #    return super(SellerAdmin, self).get_form(request, obj, **kwargs)
+        return super(SellerAdmin, self).get_form(request, obj, **kwargs)
 
 
 @admin.register(Vehicle)

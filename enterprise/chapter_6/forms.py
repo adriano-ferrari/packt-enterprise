@@ -110,3 +110,4 @@ class SellerSuperUserForm(ModelForm):
         '''
         model = Seller
         fields = '__all__'
+
